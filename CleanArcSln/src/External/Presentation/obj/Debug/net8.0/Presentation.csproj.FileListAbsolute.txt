@@ -1,0 +1,12 @@
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Presentation\bin\Debug\net8.0\Presentation.deps.json
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Presentation\bin\Debug\net8.0\Presentation.dll
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Presentation\bin\Debug\net8.0\Presentation.pdb
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Presentation\obj\Debug\net8.0\Presentation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Presentation\obj\Debug\net8.0\Presentation.AssemblyInfoInputs.cache
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Presentation\obj\Debug\net8.0\Presentation.AssemblyInfo.cs
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Presentation\obj\Debug\net8.0\Presentation.csproj.CoreCompileInputs.cache
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Presentation\obj\Debug\net8.0\Presentation.sourcelink.json
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Presentation\obj\Debug\net8.0\Presentation.dll
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Presentation\obj\Debug\net8.0\refint\Presentation.dll
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Presentation\obj\Debug\net8.0\Presentation.pdb
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Presentation\obj\Debug\net8.0\ref\Presentation.dll

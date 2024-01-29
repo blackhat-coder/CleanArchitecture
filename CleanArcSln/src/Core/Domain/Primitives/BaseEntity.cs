@@ -7,22 +7,23 @@ using System.Threading.Tasks;
 namespace Domain.Primitives;
 
 #nullable disable
-public abstract class BaseEntity : IEquatable<BaseEntity>
+public abstract class BaseEntity<T> : IEquatable<BaseEntity<T>>
 {
-    protected BaseEntity(Guid id) => Id = id;
+    protected BaseEntity(T id) => Id = id;
 
     protected BaseEntity() { }
 
-    public Guid Id { get; private init; }
+    public T Id { get; private init; }
     public DateTime CreatedOn { get; private init; }
+    public DateTime ModifiedOn { get; set; }
     public bool IsDeleted { get; private init; }
 
-    public static bool operator ==(BaseEntity first, BaseEntity second)
+    public static bool operator ==(BaseEntity<T> first, BaseEntity<T> second)
     {
         return first is not null && second is not null && first.Equals(second);
     }
 
-    public static bool operator !=(BaseEntity first, BaseEntity second)
+    public static bool operator !=(BaseEntity<T> first, BaseEntity<T> second)
     {
         return first is not null && second is not null && first.Equals(second);
     }
@@ -31,11 +32,11 @@ public abstract class BaseEntity : IEquatable<BaseEntity>
     {
         if (obj == null) return false;
 
-        if(obj.GetType() != typeof(BaseEntity)) return false;
+        if(obj.GetType() != typeof(BaseEntity<T>)) return false;
 
-        if(obj is not BaseEntity entity) return false;
+        if(obj is not BaseEntity<T> entity) return false;
 
-        return entity.Id == Id;
+        return this.Equals(entity);
     }
 
     public override int GetHashCode()
@@ -43,14 +44,14 @@ public abstract class BaseEntity : IEquatable<BaseEntity>
         return Id.GetHashCode();
     }
 
-    public bool Equals(BaseEntity other)
+    public bool Equals(BaseEntity<T> other)
     {
         if (other == null) return false;
 
-        if (other.GetType() != typeof(BaseEntity)) return false;
+        if (other.GetType() != typeof(BaseEntity<T>)) return false;
 
-        if (other is not BaseEntity entity) return false;
+        if (other is not BaseEntity<T> entity) return false;
 
-        return entity.Id == Id;
+        return this.Equals(entity);
     }
 }

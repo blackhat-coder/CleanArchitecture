@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Domain.Abstractions;
 
-public interface IUnitOfWork
+public interface IUnitOfWork<out TContext>
 {
+    TContext Context { get; }
+
+    void CreateTransaction();
+    void Commit();
+    void Rollback();
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }
