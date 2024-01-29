@@ -1,0 +1,16 @@
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Persistence\obj\Debug\net8.0\Persistence.csproj.AssemblyReference.cache
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Persistence\obj\Debug\net8.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Persistence\obj\Debug\net8.0\Persistence.AssemblyInfoInputs.cache
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Persistence\obj\Debug\net8.0\Persistence.AssemblyInfo.cs
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Persistence\obj\Debug\net8.0\Persistence.csproj.CoreCompileInputs.cache
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Persistence\obj\Debug\net8.0\Persistence.sourcelink.json
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Persistence\bin\Debug\net8.0\Persistence.deps.json
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Persistence\bin\Debug\net8.0\Persistence.dll
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Persistence\bin\Debug\net8.0\Persistence.pdb
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Persistence\bin\Debug\net8.0\Domain.dll
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Persistence\bin\Debug\net8.0\Domain.pdb
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Persistence\obj\Debug\net8.0\Persistence.csproj.CopyComplete
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Persistence\obj\Debug\net8.0\Persistence.dll
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Persistence\obj\Debug\net8.0\refint\Persistence.dll
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Persistence\obj\Debug\net8.0\Persistence.pdb
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Persistence\obj\Debug\net8.0\ref\Persistence.dll
