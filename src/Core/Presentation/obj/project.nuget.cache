@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jm6bbCTIEsm4jLOPWKqcvga6n27KZVomQh9TIRp9ANrj1w1VWNLivg/9k6WZYyNGMXPbgmStMJFwVPPS7h7NuA==",
+  "dgSpecHash": "gnLjL236bXPkOJvB7wksIigz9kKe7P98HQ9wsutjjpnuxE+oPc7bi1ZPFMWIlLEoCoxMCi3L1ZWKXxRqXUpY2Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Aboh.Israel\\Documents\\Codes\\CleanArchitecture\\CleanArchitecture\\CleanArcSln\\src\\External\\Presentation\\Presentation.csproj",
+  "projectFilePath": "C:\\Users\\Aboh.Israel\\Documents\\Codes\\CleanArchitecture\\CleanArchitecture\\src\\Core\\Presentation\\Presentation.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -17,6 +17,9 @@ namespace Domain.Entities.Invitations;
 #nullable disable
 public sealed class Invitation : BaseEntity<InvitationId>
 {
+#nullable disable
+
+    public Invitation() { }
     public Invitation(InvitationId id, Member member, Gathering gathering)
         : base(id)
     {

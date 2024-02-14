@@ -4,12 +4,15 @@ using Domain.Entities.Gatherings.ValueObjects;
 using Domain.Entities.Invitations;
 using Domain.Entities.Invitations.ValueObjects;
 using Domain.Entities.Members;
+using Domain.Entities.Members.ValueObjects;
 using Domain.Errors;
 using Domain.Primitives;
 using Domain.Shared;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,6 +22,9 @@ public sealed class Gathering : BaseEntity<GatheringId>
 {
     private readonly List<Invitation> _invitations = new();
     private readonly List<Attendee> _attendees = new();
+
+#nullable disable
+    public Gathering() { }
 
     private Gathering(GatheringId id, Member creator, GatheringType type, DateTime scheduledAtUtc, string name, string location)
         : base(id)
@@ -50,6 +56,15 @@ public sealed class Gathering : BaseEntity<GatheringId>
         gathering.CalculateGatheringTypeDetails(maximumNumberOfAttendees, invitationsValidBeforeInHours);
 
         return gathering;
+    }
+
+    public Gathering Update(string name, string location, DateTime scheduledAt)
+    {
+        this.Name = name;
+        this.Location = location;
+        this.ScheduledAtUtc = scheduledAt;
+
+        return this;
     }
 
     private void CalculateGatheringTypeDetails(

@@ -10,3 +10,15 @@ C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanAr
 C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
 C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
 C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\CleanArcSln\src\External\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\src\Core\Infrastructure\bin\Debug\net8.0\Infrastructure.deps.json
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\src\Core\Infrastructure\bin\Debug\net8.0\Infrastructure.dll
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\src\Core\Infrastructure\bin\Debug\net8.0\Infrastructure.pdb
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\src\Core\Infrastructure\obj\Debug\net8.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\src\Core\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\src\Core\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfo.cs
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\src\Core\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\src\Core\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\src\Core\Infrastructure\obj\Debug\net8.0\Infrastructure.dll
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\src\Core\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\src\Core\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
+C:\Users\Aboh.Israel\Documents\Codes\CleanArchitecture\CleanArchitecture\src\Core\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll

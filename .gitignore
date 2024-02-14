@@ -16,7 +16,6 @@
 
 # Ignore local development settings
 src/Core/API/appsettings.Development.json
-src/Core/Persistence/Migrations/
 
 
 # User-specific files (MonoDevelop/Xamarin Studio)
