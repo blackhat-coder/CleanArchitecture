@@ -3,6 +3,7 @@ using Domain.Entities.Attendees;
 using Domain.Entities.Gatherings;
 using Domain.Entities.Invitations;
 using Domain.Entities.Members;
+using Domain.Primitives;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -28,5 +29,27 @@ public sealed class ApplicationDbContext : DbContext, IApplicationDbContext
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
         base.OnModelCreating(modelBuilder);
+    }
+
+    public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    {
+        var entities = ChangeTracker.Entries<IBaseEntity>().Where(entry => entry.State == EntityState.Added 
+                                || entry.State == EntityState.Modified);
+
+        foreach(var entity in entities)
+        {
+            if (entity.State == EntityState.Added)
+            {
+                entity.Entity.CreatedOn = DateTime.UtcNow;
+                entity.Entity.ModifiedOn = DateTime.UtcNow;
+            }
+
+            if (entity.State == EntityState.Modified)
+            {
+                entity.Entity.ModifiedOn = DateTime.UtcNow;
+            }
+        }
+
+        return base.SaveChangesAsync(cancellationToken);
     }
 }

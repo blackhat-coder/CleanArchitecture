@@ -35,6 +35,7 @@ internal class GatheringConfiguration : IEntityTypeConfiguration<Gathering>
             .WithOne()
             .HasForeignKey(invitation => invitation.GatheringId);
 
-
+        builder.HasOne(gathering => gathering.Creator)
+            .WithMany();
     }
 }

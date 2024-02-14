@@ -13,6 +13,8 @@ namespace Domain.Entities.Attendees;
 
 public class Attendee : BaseEntity<AttendeeId>
 {
+#nullable disable
+    public Attendee() { }
     internal Attendee(Invitation invitation)
     {
         GatheringId = invitation.GatheringId;

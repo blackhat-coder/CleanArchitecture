@@ -10,6 +10,8 @@ namespace Domain.Entities.Members;
 
 public sealed class Member : BaseEntity<MemberId>
 {
+#nullable disable
+    public Member() { }
     public Member(MemberId id, string firstName, string lastName, string email)
         : base(id)
     {

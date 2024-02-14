@@ -7,16 +7,17 @@ using System.Threading.Tasks;
 namespace Domain.Primitives;
 
 #nullable disable
-public abstract class BaseEntity<T> : IEquatable<BaseEntity<T>>
+public abstract class BaseEntity<T> : IEquatable<BaseEntity<T>>, IBaseEntity
 {
+    private readonly List<IDomainEvent> _domainEvents = new();
     protected BaseEntity(T id) => Id = id;
 
     protected BaseEntity() { }
 
     public T Id { get; private init; }
-    public DateTime CreatedOn { get; private init; }
+    public DateTime CreatedOn { get; set; }
     public DateTime ModifiedOn { get; set; }
-    public bool IsDeleted { get; private init; }
+    public bool IsDeleted { get; set; }
 
     public static bool operator ==(BaseEntity<T> first, BaseEntity<T> second)
     {
@@ -54,4 +55,15 @@ public abstract class BaseEntity<T> : IEquatable<BaseEntity<T>>
 
         return this.Equals(entity);
     }
+    protected void RaiseDomainEvent(IDomainEvent domainEvent)
+    {
+
+    }
+}
+
+
+public interface IBaseEntity
+{
+    DateTime CreatedOn { get; set; }
+    DateTime ModifiedOn { get; set; }
 }

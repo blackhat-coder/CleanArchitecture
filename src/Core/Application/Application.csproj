@@ -8,8 +8,8 @@
 
   <ItemGroup>
     <Folder Include="Behaviors\" />
-    <Folder Include="Services\Invitations\Commands\" />
-    <Folder Include="Services\Members\Commands\" />
+    <Folder Include="Services\Gatherings\Queries\GetGatheringById\" />
+    <Folder Include="Services\Gatherings\Queries\GetCreatorGatherings\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Persistence\Persistence.csproj" />
   </ItemGroup>
 
 </Project>

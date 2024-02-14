@@ -17,7 +17,7 @@ public static class PersistenceServiceRegistration
 
         services.AddDbContext<ApplicationDbContext>(options =>
         {
-            options.UseNpgsql(configuration.GetConnectionString(""));
+            options.UseNpgsql(configuration.GetConnectionString("Db"));
         });
 
         services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
