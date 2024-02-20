@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.Abstractions;
 
-internal interface IEmailService
+public interface IEmailService
 {
+    Task SendMailAsync(string reciever, string body);
 }

@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Persistence.Context;
+using Persistence.Interceptors;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,14 @@ public static class PersistenceServiceRegistration
     public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
     {
 
-        services.AddDbContext<ApplicationDbContext>(options =>
+        services.AddSingleton<ConvertDomainEventsToOutboxMessagesInterceptor>();
+
+        services.AddDbContext<ApplicationDbContext>((serviceProvider, options) =>
         {
-            options.UseNpgsql(configuration.GetConnectionString("Db"));
+            var interceptor = serviceProvider.GetService<ConvertDomainEventsToOutboxMessagesInterceptor>();
+
+            options.UseNpgsql(configuration.GetConnectionString("Db"))
+                .AddInterceptors(interceptor!);
         });
 
         services.AddScoped<IApplicationDbContext, ApplicationDbContext>();

@@ -5,6 +5,7 @@ using Domain.Entities.Invitations;
 using Domain.Entities.Members;
 using Domain.Primitives;
 using Microsoft.EntityFrameworkCore;
+using Persistence.Outbox;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,7 @@ public sealed class ApplicationDbContext : DbContext, IApplicationDbContext
     public DbSet<Gathering> Gatherings { get; set; }
     public DbSet<Invitation> Invitations { get; set; }
     public DbSet<Member> Members { get; set; }
+    public DbSet<OutboxMessage> OutBoxMessages { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

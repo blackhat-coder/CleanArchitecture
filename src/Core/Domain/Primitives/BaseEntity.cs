@@ -57,8 +57,12 @@ public abstract class BaseEntity<T> : IEquatable<BaseEntity<T>>, IBaseEntity
     }
     protected void RaiseDomainEvent(IDomainEvent domainEvent)
     {
-
+        _domainEvents.Add(domainEvent);
     }
+
+    public IReadOnlyCollection<IDomainEvent> GetDomainEvents() => _domainEvents.ToList();
+
+    public void ClearDomainEvents() => _domainEvents.Clear();
 }
 
 
@@ -66,4 +70,6 @@ public interface IBaseEntity
 {
     DateTime CreatedOn { get; set; }
     DateTime ModifiedOn { get; set; }
+    IReadOnlyCollection<IDomainEvent> GetDomainEvents();
+    void ClearDomainEvents();
 }

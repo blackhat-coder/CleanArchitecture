@@ -1,7 +1,9 @@
 ﻿using Domain.Entities.Attendees;
+using Domain.Entities.Gatherings.DomainEvents;
 using Domain.Entities.Gatherings.Enums;
 using Domain.Entities.Gatherings.ValueObjects;
 using Domain.Entities.Invitations;
+using Domain.Entities.Invitations.DomainEvents;
 using Domain.Entities.Invitations.ValueObjects;
 using Domain.Entities.Members;
 using Domain.Entities.Members.ValueObjects;
@@ -18,6 +20,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities.Gatherings;
 
+// AggregateRoot
 public sealed class Gathering : BaseEntity<GatheringId>
 {
     private readonly List<Invitation> _invitations = new();
@@ -34,6 +37,8 @@ public sealed class Gathering : BaseEntity<GatheringId>
         ScheduledAtUtc = scheduledAtUtc;
         Name = name;
         Location = location;
+
+        RaiseDomainEvent(new GatheringCreatedDomainEvent(id.Value));
     }
 
     public Member Creator { get; private set; }
@@ -112,6 +117,7 @@ public sealed class Gathering : BaseEntity<GatheringId>
         var invitation = new Invitation(InvitationId.NewInvitationId(), member, this);
 
         _invitations.Add(invitation);
+        RaiseDomainEvent(new InvitationCreatedDomainEvent(this.Id.Value, member.Id.Value));
 
         return Result<Invitation>.Success(GatheringMessages.InvitationSent, invitation);
     }
@@ -130,6 +136,8 @@ public sealed class Gathering : BaseEntity<GatheringId>
         var attendee = invitation.Accept();
         _attendees.Add(attendee);
         NumberOfAttendees++;
+
+        RaiseDomainEvent(new InvitationAcceptedDomainEvent(invitation.Id.Value, this.Id.Value));
 
         return Result<Attendee>.Success(GatheringMessages.InvitationAccepted, attendee);
     }
