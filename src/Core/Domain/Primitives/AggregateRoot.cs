@@ -20,6 +20,6 @@ public class AggregateRoot<T>
 
     protected void RaiseDomainEvent(IDomainEvent domainEvent)
     {
-
+        _domainEvents.Add(domainEvent);
     }
 }

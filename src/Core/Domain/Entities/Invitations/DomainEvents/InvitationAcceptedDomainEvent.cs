@@ -1,4 +1,6 @@
-﻿using Domain.Primitives;
+﻿using Domain.Entities.Gatherings.ValueObjects;
+using Domain.Entities.Invitations.ValueObjects;
+using Domain.Primitives;
 using System;
 using System.Collections.Generic;
 using System.Linq;

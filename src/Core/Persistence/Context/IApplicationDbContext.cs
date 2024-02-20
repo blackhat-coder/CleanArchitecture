@@ -3,6 +3,7 @@ using Domain.Entities.Gatherings;
 using Domain.Entities.Invitations;
 using Domain.Entities.Members;
 using Microsoft.EntityFrameworkCore;
+using Persistence.Outbox;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,5 +18,6 @@ public interface IApplicationDbContext
     DbSet<Gathering> Gatherings { get; set; }
     DbSet<Invitation> Invitations { get; set; }
     DbSet<Member> Members { get; set; }
+    public DbSet<OutboxMessage> OutBoxMessages { get; set; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

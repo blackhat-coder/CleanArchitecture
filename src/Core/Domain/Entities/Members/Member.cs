@@ -1,4 +1,5 @@
-﻿using Domain.Entities.Members.ValueObjects;
+﻿using Domain.Entities.Members.DomainEvents;
+using Domain.Entities.Members.ValueObjects;
 using Domain.Primitives;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ public sealed class Member : BaseEntity<MemberId>
         FirstName = firstName;
         LastName = lastName;
         Email = email;
+
+        this.RaiseDomainEvent(new MemberRegisteredDomainEvent(this.Id.Value));
     }
     public string FirstName { get; set; }
     public string LastName { get; set; }
