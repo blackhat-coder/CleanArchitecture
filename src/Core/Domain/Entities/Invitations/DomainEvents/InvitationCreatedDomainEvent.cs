@@ -9,6 +9,6 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities.Invitations.DomainEvents;
 
-public record InvitationCreatedDomainEvent(Guid gatheringId, Guid memberId) : IDomainEvent
+public record InvitationCreatedDomainEvent(Guid Id, Guid gatheringId, Guid memberId) : DomainEvent(Id)
 {
 }

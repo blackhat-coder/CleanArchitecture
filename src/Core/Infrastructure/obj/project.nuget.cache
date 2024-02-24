@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aivkgRoZx+att/LlcHDpvYOj8ZX0NF7WgAdbU8h2cIvao6JQs60GKxQdFWkGwznmFUNj+bKMp+zRsGyQm3wLlA==",
+  "dgSpecHash": "Adxj7P6KKrDuBpB20Qst8QwsApSxm+JPuYgB1X2cZCQxUi0pksDjD+uM7Btor31hNAuqKOQEbji+MDwj1u6+0A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Aboh.Israel\\Documents\\Codes\\CleanArchitecture\\CleanArchitecture\\src\\Core\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -31,6 +31,8 @@
     "C:\\Users\\Aboh.Israel\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Aboh.Israel\\.nuget\\packages\\npgsql\\8.0.0\\npgsql.8.0.0.nupkg.sha512",
     "C:\\Users\\Aboh.Israel\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\8.0.0\\npgsql.entityframeworkcore.postgresql.8.0.0.nupkg.sha512",
+    "C:\\Users\\Aboh.Israel\\.nuget\\packages\\polly\\8.3.0\\polly.8.3.0.nupkg.sha512",
+    "C:\\Users\\Aboh.Israel\\.nuget\\packages\\polly.core\\8.3.0\\polly.core.8.3.0.nupkg.sha512",
     "C:\\Users\\Aboh.Israel\\.nuget\\packages\\system.diagnostics.diagnosticsource\\8.0.0\\system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512"
   ],
   "logs": []

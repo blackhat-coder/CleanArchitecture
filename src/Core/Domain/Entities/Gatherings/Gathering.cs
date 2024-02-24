@@ -38,7 +38,7 @@ public sealed class Gathering : BaseEntity<GatheringId>
         Name = name;
         Location = location;
 
-        RaiseDomainEvent(new GatheringCreatedDomainEvent(id.Value));
+        RaiseDomainEvent(new GatheringCreatedDomainEvent(Guid.NewGuid(), id.Value));
     }
 
     public Member Creator { get; private set; }
@@ -117,7 +117,7 @@ public sealed class Gathering : BaseEntity<GatheringId>
         var invitation = new Invitation(InvitationId.NewInvitationId(), member, this);
 
         _invitations.Add(invitation);
-        RaiseDomainEvent(new InvitationCreatedDomainEvent(this.Id.Value, member.Id.Value));
+        RaiseDomainEvent(new InvitationCreatedDomainEvent(Guid.NewGuid(), this.Id.Value, member.Id.Value));
 
         return Result<Invitation>.Success(GatheringMessages.InvitationSent, invitation);
     }
@@ -137,7 +137,7 @@ public sealed class Gathering : BaseEntity<GatheringId>
         _attendees.Add(attendee);
         NumberOfAttendees++;
 
-        RaiseDomainEvent(new InvitationAcceptedDomainEvent(invitation.Id.Value, this.Id.Value));
+        RaiseDomainEvent(new InvitationAcceptedDomainEvent(Guid.NewGuid(), invitation.Id.Value, this.Id.Value));
 
         return Result<Attendee>.Success(GatheringMessages.InvitationAccepted, attendee);
     }

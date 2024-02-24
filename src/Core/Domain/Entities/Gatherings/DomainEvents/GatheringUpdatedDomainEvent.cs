@@ -8,6 +8,6 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities.Gatherings.DomainEvents;
 
-public record GatheringUpdatedDomainEvent(Guid gatheringId) : IDomainEvent
+public record GatheringUpdatedDomainEvent(Guid Id, Guid gatheringId) : DomainEvent(Id)
 {
 }

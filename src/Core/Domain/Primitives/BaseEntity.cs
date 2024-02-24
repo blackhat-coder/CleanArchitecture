@@ -9,7 +9,7 @@ namespace Domain.Primitives;
 #nullable disable
 public abstract class BaseEntity<T> : IEquatable<BaseEntity<T>>, IBaseEntity
 {
-    private readonly List<IDomainEvent> _domainEvents = new();
+    private readonly List<DomainEvent> _domainEvents = new();
     protected BaseEntity(T id) => Id = id;
 
     protected BaseEntity() { }
@@ -55,12 +55,12 @@ public abstract class BaseEntity<T> : IEquatable<BaseEntity<T>>, IBaseEntity
 
         return this.Equals(entity);
     }
-    protected void RaiseDomainEvent(IDomainEvent domainEvent)
+    protected void RaiseDomainEvent(DomainEvent domainEvent)
     {
         _domainEvents.Add(domainEvent);
     }
 
-    public IReadOnlyCollection<IDomainEvent> GetDomainEvents() => _domainEvents.ToList();
+    public IReadOnlyCollection<DomainEvent> GetDomainEvents() => _domainEvents.ToList();
 
     public void ClearDomainEvents() => _domainEvents.Clear();
 }
@@ -70,6 +70,6 @@ public interface IBaseEntity
 {
     DateTime CreatedOn { get; set; }
     DateTime ModifiedOn { get; set; }
-    IReadOnlyCollection<IDomainEvent> GetDomainEvents();
+    IReadOnlyCollection<DomainEvent> GetDomainEvents();
     void ClearDomainEvents();
 }

@@ -9,6 +9,6 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities.Members.DomainEvents;
 
-public record MemberRegisteredDomainEvent(Guid memberId) : IDomainEvent
+public record MemberRegisteredDomainEvent(Guid Id, Guid memberId) : DomainEvent(Id)
 {
 }
