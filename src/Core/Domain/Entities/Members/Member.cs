@@ -20,7 +20,7 @@ public sealed class Member : BaseEntity<MemberId>
         LastName = lastName;
         Email = email;
 
-        this.RaiseDomainEvent(new MemberRegisteredDomainEvent(this.Id.Value));
+        this.RaiseDomainEvent(new MemberRegisteredDomainEvent(Guid.NewGuid(), this.Id.Value));
     }
     public string FirstName { get; set; }
     public string LastName { get; set; }

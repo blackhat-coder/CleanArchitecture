@@ -7,6 +7,8 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Persistence.Context;
 using Persistence.Outbox;
+using Polly;
+using Polly.Retry;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +28,10 @@ public class ProcessOutBoxMessagesHostedService(IServiceScopeFactory _serviceFac
     private static int BATCH_SIZE = 100;
     private static object _lock = new object();
     private object _indexLock = new object();
+
+    // try config
+    private static int MAX_RETRY = 4;
+    private static int DELAY = 3;
     public void Dispose()
     {
         _timer?.Dispose();
@@ -74,6 +80,28 @@ public class ProcessOutBoxMessagesHostedService(IServiceScopeFactory _serviceFac
                 {
                     throw new Exception("Can't get DeserializeObject");
                 };
+
+                var retryOptions = new RetryStrategyOptions
+                {
+                    ShouldHandle = new PredicateBuilder().Handle<Exception>(),
+                    BackoffType = DelayBackoffType.Exponential,
+                    UseJitter = false,
+                    MaxRetryAttempts = MAX_RETRY,
+                    Delay = TimeSpan.FromSeconds(DELAY),
+                    OnRetry = args => {
+                        if (args.AttemptNumber == 0)
+                        {
+                            _logger.LogInformation("Immediate Retry is going to retry publishing domain event because of an exception");
+                            return default;
+                        }
+
+                        _logger.LogInformation($"Delayed Retry will reschedule publishing domain event after a delay of {args.RetryDelay} because of an exception");
+                        return default;
+                    }
+                };
+
+                var pipeline = new ResiliencePipelineBuilder().AddRetry(retryOptions).Build();
+
                 foreach (var message in messages)
                 {
 
@@ -95,8 +123,20 @@ public class ProcessOutBoxMessagesHostedService(IServiceScopeFactory _serviceFac
                         continue;
                     }
 
-                    await _publisher.Publish(domainEvent);
-                    message.ProcessedOnUtc = DateTime.UtcNow;
+                    try
+                    {
+                        // Implement Retry & Circuit breaker pattern
+
+                        await pipeline.ExecuteAsync(async (ct) => {
+                            await _publisher.Publish(domainEvent, ct);
+                        });
+
+                        message.ProcessedOnUtc = DateTime.UtcNow;
+                    }catch(Exception ex)
+                    {
+                        message.Error = ex.Message.ToString();
+                        message.ProcessedOnUtc = DateTime.UtcNow;
+                    }
 
                     lock (_indexLock)
                     {
