@@ -26,6 +26,7 @@ public sealed class ApplicationDbContext : DbContext, IApplicationDbContext
     public DbSet<Invitation> Invitations { get; set; }
     public DbSet<Member> Members { get; set; }
     public DbSet<OutboxMessage> OutBoxMessages { get; set; }
+    public DbSet<OutboxMessageConsumer> OutBoxMessageConsumer { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

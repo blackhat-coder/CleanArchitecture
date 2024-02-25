@@ -15,7 +15,8 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
           "Microsoft.Extensions.Hosting.Abstractions": "8.0.0",
           "Newtonsoft.Json": "13.0.3",
-          "Persistence": "1.0.0"
+          "Persistence": "1.0.0",
+          "Polly": "8.3.0"
         },
         "runtime": {
           "Infrastructure.dll": {}
@@ -227,6 +228,25 @@
           "lib/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
             "assemblyVersion": "8.0.0.0",
             "fileVersion": "8.0.0.0"
+          }
+        }
+      },
+      "Polly/8.3.0": {
+        "dependencies": {
+          "Polly.Core": "8.3.0"
+        },
+        "runtime": {
+          "lib/net6.0/Polly.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.3.0.3097"
+          }
+        }
+      },
+      "Polly.Core/8.3.0": {
+        "runtime": {
+          "lib/net8.0/Polly.Core.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.3.0.3097"
           }
         }
       },
@@ -460,6 +480,20 @@
       "sha512": "sha512-GDXiMS9peEdjSCU/rfgyHruio7q6tYuywGaktqEi6UPQ6ILechp3fVVX+dHXkIXt4nklCBzYVWkzFrSL9ubKUA==",
       "path": "npgsql.entityframeworkcore.postgresql/8.0.0",
       "hashPath": "npgsql.entityframeworkcore.postgresql.8.0.0.nupkg.sha512"
+    },
+    "Polly/8.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vqAQmLO1gZcS8Ox9Ky+hrq0HxYrYVSBS1vzv6o6RZH3vvECutngIxkUHw9YijbG0QrycxvHo0Hbx0/D7MGgdow==",
+      "path": "polly/8.3.0",
+      "hashPath": "polly.8.3.0.nupkg.sha512"
+    },
+    "Polly.Core/8.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-A3r4xkWasffyrIJGjA3jWQi86ZGcR9BEbpIIoP9xYRAKYwiaGbKpqpsHdWv5sCeLZdaWpVs7pc4EM8Tei+LluA==",
+      "path": "polly.core/8.3.0",
+      "hashPath": "polly.core.8.3.0.nupkg.sha512"
     },
     "System.Diagnostics.DiagnosticSource/8.0.0": {
       "type": "package",
