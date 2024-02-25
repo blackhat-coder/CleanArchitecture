@@ -18,6 +18,7 @@ public interface IApplicationDbContext
     DbSet<Gathering> Gatherings { get; set; }
     DbSet<Invitation> Invitations { get; set; }
     DbSet<Member> Members { get; set; }
-    public DbSet<OutboxMessage> OutBoxMessages { get; set; }
+    DbSet<OutboxMessage> OutBoxMessages { get; set; }
+    DbSet<OutboxMessageConsumer> OutBoxMessageConsumer { get; set; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }
